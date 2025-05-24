@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sai Teja | Portfolio + Projects</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    :root {
+      --clr-primary: #1e90ff;
+      --clr-secondary: #2ecc71;
+      --clr-bg: #f5f9ff;
+      --clr-dark: #0f1e2e;
+      --clr-light: #ffffff;
+      --transition: 0.3s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--clr-bg);
+      color: var(--clr-dark);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--clr-light);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--clr-primary);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--clr-dark);
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      color: var(--clr-primary);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: var(--clr-light);
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: var(--clr-primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* ABOUT */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    #about img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h1 {
+      margin-top: 0;
+      color: var(--clr-primary);
+    }
+
+    .about-text p {
+      line-height: 1.6;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin: 0.5rem 1rem 0 0;
+      color: var(--clr-primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .skills-list, .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill, .project {
+      flex: 1 1 250px;
+      background: #f0f7ff;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #cce9da;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .progress-bar div {
+      height: 100%;
+      background: var(--clr-secondary);
+      transition: width 1.2s ease;
+    }
+
+    ul.cert-list {
+      padding-left: 1.5rem;
+      list-style-type: square;
+    }
+
+    .filters label, .input-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    /* To-Do Styles */
+    .input-container {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    input[type="text"], input[type="date"], button {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background: var(--clr-primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul#taskList {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul#taskList li {
+      background: #f9f9f9;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--clr-primary);
+      color: white;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Sai Teja</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#todo">To-Do</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <img src="https://images.hdqwalls.com/wallpapers/spiderman-closeup-4k-pd.jpg" alt="Sai Teja" />
+    <div class="about-text">
+      <h1>Sai Teja</h1>
+      <p><strong>Location:</strong> Siddipet</p>
+      <p><strong>Email:</strong> chsaitej67@gmail.com</p>
+      <p><strong>Phone:</strong> +91 9908282632</p>
+      <p>Software enthusiast with a strong foundation in cloud computing, software development, and DevOps.</p>
+      <div class="contact-links">
+        <a href="https://github.com/saitejch" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/saitejch09/" target="_blank">LinkedIn</a>
+        <a href="https://saitejch.github.io/portfolio/" target="_blank">Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills & Expertise</h2>
+    <div class="skills-list">
+      <div class="skill"><strong>Cloud Computing</strong><div class="progress-bar"><div style="width: 90%"></div></div></div>
+      <div class="skill"><strong>Programming</strong><div class="progress-bar"><div style="width: 85%"></div></div></div>
+      <div class="skill"><strong>DevOps</strong><div class="progress-bar"><div style="width: 75%"></div></div></div>
+      <div class="skill"><strong>DSA</strong><div class="progress-bar"><div style="width: 80%"></div></div></div>
+      <div class="skill"><strong>AI/ML</strong><div class="progress-bar"><div style="width: 70%"></div></div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Mediprice</h3>
+        <p>Medicine search, reminders, price comparison, adherence tracking.</p>
+        <a href="https://github.com/saitejch/Medieaze_project.git" target="_blank">GitHub</a>
+      </div>
+      <div class="project">
+        <h3>AI Fitness Tracker</h3>
+        <p>Track meals, exercises, goals; realtime AI recommendations.</p>
+        <a href="https://github.com/saitejch/Fitness_tracker.git" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="cert-list">
+      <li>Python - Mindlusters</li>
+      <li>Cybersecurity - Supraja Tech</li>
+      <li>AI Fundamentals - IBM</li>
+      <li>Data Analytics - Udemy</li>
+    </ul>
+  </section>
+
+  <!-- TODO LIST -->
+  <section id="todo">
+    <h2>Any Queries??</h2>
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Add a new task" />
+      <input type="date" id="dueDate" />
+      <button id="addBtn">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+  </section>
+
+  <!-- PRODUCT LISTING -->
+  <section id="products">
+    <h2>Product Listing</h2>
+    <div class="filters">
+      <label>Category:
+        <select id="category-filter">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="fashion">Fashion</option>
+          <option value="books">Books</option>
+        </select>
+      </label>
+      <label>Price:
+        <select id="price-filter">
+          <option value="all">All</option>
+          <option value="0-50">Under $50</option>
+          <option value="50-100">$50 - $100</option>
+          <option value="100+">Above $100</option>
+        </select>
+      </label>
+      <label>Sort:
+        <select id="sort-filter">
+          <option value="default">Default</option>
+          <option value="rating-desc">Rating: High to Low</option>
+          <option value="rating-asc">Rating: Low to High</option>
+        </select>
+      </label>
+    </div>
+    <div id="product-list" class="products"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Name" required><br>
+      <input type="email" placeholder="Email" required><br>
+      <textarea rows="4" placeholder="Message" required></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 Sai Teja | Portfolio + Projects
+</footer>
+
+<script>
+  // Product Filter Logic
+ const products = [
+  {
+    name: 'Laptop',
+    category: 'electronics',
+    price: 900,
+    rating: 4.5,
+    image: 'https://freepngimg.com/thumb/laptop/8-2-laptop-png.png'
+  },
+  {
+    name: 'Jeans',
+    category: 'fashion',
+    price: 40,
+    rating: 3.8,
+    image: 'https://cdn.pixabay.com/photo/2016/03/31/19/39/jeans-1295063_960_720.png'
+  },
+  {
+    name: 'Book: JS Basics',
+    category: 'books',
+    price: 25,
+    rating: 4.2,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Book_icon.svg/1200px-Book_icon.svg.png'
+  },
+  {
+    name: 'Smartphone',
+    category: 'electronics',
+    price: 700,
+    rating: 4.7,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/IPhone_12_Pro_Graphite.svg'
+  },
+  {
+    name: 'T-shirt',
+    category: 'fashion',
+    price: 20,
+    rating: 3.5,
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/T-shirt_icon.svg/1024px-T-shirt_icon.svg.png'
+  }
+];
+
+
+  const productList = document.getElementById('product-list');
+  const categoryFilter = document.getElementById('category-filter');
+  const priceFilter = document.getElementById('price-filter');
+  const sortFilter = document.getElementById('sort-filter');
+
+  function displayProducts() {
+    let filtered = [...products];
+    const cat = categoryFilter.value;
+    const price = priceFilter.value;
+    const sort = sortFilter.value;
+
+    if (cat !== 'all') filtered = filtered.filter(p => p.category === cat);
+    if (price === '0-50') filtered = filtered.filter(p => p.price < 50);
+    else if (price === '50-100') filtered = filtered.filter(p => p.price >= 50 && p.price <= 100);
+    else if (price === '100+') filtered = filtered.filter(p => p.price > 100);
+    if (sort === 'rating-desc') filtered.sort((a,b)=>b.rating-a.rating);
+    else if (sort === 'rating-asc') filtered.sort((a,b)=>a.rating-b.rating);
+
+    productList.innerHTML = '';
+    filtered.forEach(p => {
+      const div = document.createElement('div');
+      div.className = 'product';
+      div.innerHTML = `<h3>${p.name}</h3><p>Category: ${p.category}</p><p>Price: $${p.price}</p><p>Rating: ${p.rating}</p>`;
+      productList.appendChild(div);
+    });
+  }
+
+  categoryFilter.addEventListener('change', displayProducts);
+  priceFilter.addEventListener('change', displayProducts);
+  sortFilter.addEventListener('change', displayProducts);
+  displayProducts();
+
+  // To-Do Logic
+  const taskInput = document.getElementById('taskInput');
+  const dueDate = document.getElementById('dueDate');
+  const addBtn = document.getElementById('addBtn');
+  const taskList = document.getElementById('taskList');
+  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+  function saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  function renderTasks() {
+    taskList.innerHTML = '';
+    tasks.forEach((task, index) => {
+      const li = document.createElement('li');
+      if (task.completed) li.classList.add('completed');
+      li.innerHTML = `<div class="task-details">${task.text} ${task.date ? `<small>Due: ${task.date}</small>` : ''}</div>`;
+      const del = document.createElement('button');
+      del.textContent = 'Delete';
+      del.onclick = e => { e.stopPropagation(); tasks.splice(index, 1); saveTasks(); renderTasks(); };
+      li.onclick = () => { tasks[index].completed = !tasks[index].completed; saveTasks(); renderTasks(); };
+      li.appendChild(del);
+      taskList.appendChild(li);
+    });
+  }
+
+  addBtn.onclick = () => {
+    const text = taskInput.value.trim();
+    const date = dueDate.value;
+    if (text) {
+      tasks.push({ text, date, completed: false });
+      saveTasks();
+      renderTasks();
+      taskInput.value = '';
+      dueDate.value = '';
+    }
+  };
+
+  taskInput.addEventListener('keypress', e => {
+    if (e.key === 'Enter') addBtn.click();
+  });
+
+  renderTasks();
+</script>
+</body>
+</html>
